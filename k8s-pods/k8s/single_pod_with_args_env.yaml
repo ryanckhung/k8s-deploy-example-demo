@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ryan
+spec:
+  containers:
+  - name: ryan 
+    image: ryanckhung/ryantest
+    args: ["Hello Token Pods"]
+    env:
+    - name: TEST_TOKEN
+      value: "token-pod"
+    ports:
+    - containerPort: 80

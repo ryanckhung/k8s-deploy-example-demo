@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ryan
+spec:
+  containers:
+  - name: ryan 
+    image: ryanckhung/ryantest
+    args: ["Hello Pods"]
+    ports:
+    - containerPort: 80

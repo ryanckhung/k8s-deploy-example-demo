@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  # name must be env-cm but not env_cm, underscore is not allowed
+  name: env-cm                    
+data:
+  # refer to main.py: TEST_TOKEN
+  TEST_TOKEN: "token-configmap"

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ryan-flask-pod-b
+  labels:
+    app: ryan-flask-pod-b
+spec:
+  containers:
+  - name: ryan 
+    image: ryanckhung/ryanflask
+    ports:
+    - containerPort: 5000

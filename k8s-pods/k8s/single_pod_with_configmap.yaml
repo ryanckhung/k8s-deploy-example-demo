@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ryan
+spec:
+  containers:
+  - name: ryan 
+    image: ryanckhung/ryantest
+    args: ["Hello ConfigMap "]
+    env:
+      - name: TEST_TOKEN          # it should be the name as the key; but in upper case 
+        valueFrom:
+          configMapKeyRef:
+            name: env-cm        # name of the config map; refer to env_configmap.yaml
+            key: TEST_TOKEN     # name of the key inside the env_configmap.yaml
+    ports:
+    - containerPort: 80

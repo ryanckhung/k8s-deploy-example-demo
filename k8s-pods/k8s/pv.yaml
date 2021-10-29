@@ -1,0 +1,13 @@
+# you don't need to create the /pv_vol/log
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-vol
+spec:
+  persistentVolumeReclaimPolicy: Retain
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 100Mi
+  hostPath:
+    path: /pv_vol/log

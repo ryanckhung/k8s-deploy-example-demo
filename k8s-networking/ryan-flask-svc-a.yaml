@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-a
+spec:
+  selector:
+    app: ryan-flask-pod-a
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
