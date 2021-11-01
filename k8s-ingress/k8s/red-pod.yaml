@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: red-pod
+  labels:
+    app: red-pod
+spec:
+  containers:
+  - name: red-container
+    image: ryanckhung/ryannginx_red

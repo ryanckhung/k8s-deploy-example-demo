@@ -22,3 +22,30 @@
 > docker push ryanckhung/ryannginx_red
 > docker push ryanckhung/ryannginx_green
 > docker push ryanckhung/ryannginx_blue
+
+# create the k8s pod and svc
+./k8s/red-pod.yaml
+./k8s/green-pod.yaml
+./k8s/blue-pod.yaml
+> cd k8s
+> kubectl apply -f=red-pod.yaml 
+> kubectl apply -f=green-pod.yaml 
+> kubectl apply -f=blue-pod.yaml
+apply the service
+> kubectl apply -f red-svc.yaml
+> kubectl apply -f green-svc.yaml
+> kubectl apply -f blue-svc.yaml
+
+check connectivity
+> kubectl exec pod/red-pod -- curl blue-svc:8088
+
+apply ingress rule
+> kubectl apply -f ingress.yaml
+
+check the ip of the node
+> kubectl get nodes -o wide (get the Internal-IP; in this example it is 192.168.99.100)
+
+load the page
+> curl 192.168.99.100/red
+> curl 192.168.99.100/green
+> curl 192.168.99.100/blue

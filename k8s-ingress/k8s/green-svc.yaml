@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: green-svc
+spec:
+  selector:
+    app: green-pod
+  ports:
+    - protocol: TCP
+      port: 8088
+      targetPort: 80
