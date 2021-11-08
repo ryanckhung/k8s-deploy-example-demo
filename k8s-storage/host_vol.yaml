@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-hostpath
+spec:
+  containers:
+  - image: alpine
+    name: ryan-container
+    args:
+    - /bin/sh
+    - -c
+    - touch /tmp/test.txt; echo hello >> /tmp/test.txt; sleep 3600
+    volumeMounts:
+    - mountPath: /tmp
+      name: host-volume
+  volumes:
+  - name: host-volume
+    hostPath:
+      path: /home/ryanhung/Desktop
+      # give error if use Directory
+      type: DirectoryOrCreate
