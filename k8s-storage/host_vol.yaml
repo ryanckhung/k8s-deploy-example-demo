@@ -17,5 +17,6 @@ spec:
   - name: host-volume
     hostPath:
       path: /home/ryanhung/Desktop
-      # give error if use Directory
+      # give error if use Directory; 
+      # must use DirectoryOrCreate if you not sure the directory is exist
       type: DirectoryOrCreate
